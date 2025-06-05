@@ -1,0 +1,8 @@
+- title: 获取Auth鉴权码
+  request:
+    url:
+    method:
+    headers:
+    json:
+  extract:
+  validate:
