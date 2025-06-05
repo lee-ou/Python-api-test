@@ -1,13 +1,16 @@
 import os
 
+import allure
 import pytest
 import logging
 
+from commons.cases import excute_cases
 from utils.yaml_handle import get_sorted_yaml_files, get_cases_data
 
 logger = logging.getLogger(__name__)
 
 
+@allure.epic('XXX接口自动化测试报告')
 class TestApiFuncs:
     pass
 
@@ -21,7 +24,7 @@ def create_test_funcs(data):
 
     @pytest.mark.parametrize('info', get_cases_data(data))
     def funcs(self, info, request):
-        logger.info(info)
+        excute_cases(info)
 
     return funcs
 

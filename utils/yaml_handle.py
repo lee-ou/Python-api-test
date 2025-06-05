@@ -44,7 +44,7 @@ def clear_extract():
 
 def get_sorted_yaml_files():
     """
-    获取指定目录及其子目录下所有.yaml/.yml文件路径，并按字母顺序排序
+    获取指定目录及其子目录下所有.yaml/.yml文件路径，并排序
     :return: 排序后的文件路径列表
     """
     yaml_files = []

@@ -1,8 +1,21 @@
-- title: 获取Auth鉴权码
+- module: xxx
+  title: 获取Auth鉴权码
   request:
     url:
     method:
     headers:
     json:
+  extract:
+  validate:
+
+
+- module: xxx
+  title: 文件上传
+  request:
+    url:
+    method:
+    headers:
+    files:
+      key: value
   extract:
   validate:

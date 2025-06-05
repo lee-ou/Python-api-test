@@ -1,1 +1,11 @@
-2025-06-04 18:39:30 | INFO | funcs 24: {'title': '获取Auth鉴权码', 'request': {'url': None, 'method': None, 'headers': None, 'json': None}, 'extract': None, 'validate': None}
+2025-06-05 18:17:27 | INFO | excute_cases 15: 执行用例：xxx==>获取Auth鉴权码......
+2025-06-05 18:17:27 | INFO | send_request 21: 请求url参数: None
+2025-06-05 18:17:27 | INFO | send_request 21: 请求method参数: None
+2025-06-05 18:17:27 | INFO | send_request 21: 请求headers参数: None
+2025-06-05 18:17:27 | INFO | send_request 21: 请求json参数: None
+2025-06-05 18:17:27 | ERROR | send_request 30: 接口请求失败，失败原因：'NoneType' object has no attribute 'upper'
+2025-06-05 18:17:27 | INFO | excute_cases 15: 执行用例：xxx==>文件上传......
+2025-06-05 18:17:27 | INFO | send_request 21: 请求url参数: None
+2025-06-05 18:17:27 | INFO | send_request 21: 请求method参数: None
+2025-06-05 18:17:27 | INFO | send_request 21: 请求headers参数: None
+2025-06-05 18:17:27 | ERROR | send_request 30: 接口请求失败，失败原因：[Errno 2] No such file or directory: 'value'
