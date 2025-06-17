@@ -1,0 +1,8 @@
+Request:
+  max_retries: False
+
+MYSQL:
+  host:
+  port:
+  user:
+  pwd:

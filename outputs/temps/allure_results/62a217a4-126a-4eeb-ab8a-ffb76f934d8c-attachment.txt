@@ -1,0 +1,5 @@
+2025-06-17 16:01:02 | [32mINFO[0m | excute_cases | 20 |: 执行用例：xxx==>文件上传
+2025-06-17 16:01:02 | [1m[31mERROR[0m | _prepare_files | 22 |: 文件打开失败: [Errno 2] No such file or directory: 'value'
+2025-06-17 16:01:02 | [1m[31mERROR[0m | send_request | 39 |: 请求失败: [Errno 2] No such file or directory: 'value'
+2025-06-17 16:01:02 | [32mINFO[0m | excute_cases | 27 |: {'key1': ['json', '$.data', 0], 'key2': ['text', 'xxxx', 0]}
+2025-06-17 16:01:02 | [1m[31mERROR[0m | excute_cases | 33 |: 用例执行失败：'NoneType' object has no attribute 'json'

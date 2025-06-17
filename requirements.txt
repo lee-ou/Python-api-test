@@ -1,4 +1,5 @@
-requests
-pytest
-pyyaml
+requests~=2.32.3
+pytest~=8.4.0
+pyyaml~=6.0.2
 allure-pytest
+jsonpath~=0.82.2

@@ -1,11 +1,11 @@
-2025-06-05 18:17:27 | INFO | excute_cases 15: 执行用例：xxx==>获取Auth鉴权码......
-2025-06-05 18:17:27 | INFO | send_request 21: 请求url参数: None
-2025-06-05 18:17:27 | INFO | send_request 21: 请求method参数: None
-2025-06-05 18:17:27 | INFO | send_request 21: 请求headers参数: None
-2025-06-05 18:17:27 | INFO | send_request 21: 请求json参数: None
-2025-06-05 18:17:27 | ERROR | send_request 30: 接口请求失败，失败原因：'NoneType' object has no attribute 'upper'
-2025-06-05 18:17:27 | INFO | excute_cases 15: 执行用例：xxx==>文件上传......
-2025-06-05 18:17:27 | INFO | send_request 21: 请求url参数: None
-2025-06-05 18:17:27 | INFO | send_request 21: 请求method参数: None
-2025-06-05 18:17:27 | INFO | send_request 21: 请求headers参数: None
-2025-06-05 18:17:27 | ERROR | send_request 30: 接口请求失败，失败原因：[Errno 2] No such file or directory: 'value'
+2025-06-17 16:01:02 | INFO | excute_cases | 20 |: 执行用例：xxx==>获取Auth鉴权码
+2025-06-17 16:01:02 | INFO | send_request | 32 |: 请求url参数: None
+2025-06-17 16:01:02 | INFO | send_request | 32 |: 请求method参数: None
+2025-06-17 16:01:02 | INFO | send_request | 32 |: 请求headers参数: None
+2025-06-17 16:01:02 | INFO | send_request | 32 |: 请求json参数: None
+2025-06-17 16:01:02 | ERROR | send_request | 39 |: 请求失败: 'NoneType' object has no attribute 'upper'
+2025-06-17 16:01:02 | INFO | excute_cases | 20 |: 执行用例：xxx==>文件上传
+2025-06-17 16:01:02 | ERROR | _prepare_files | 22 |: 文件打开失败: [Errno 2] No such file or directory: 'value'
+2025-06-17 16:01:02 | ERROR | send_request | 39 |: 请求失败: [Errno 2] No such file or directory: 'value'
+2025-06-17 16:01:02 | INFO | excute_cases | 27 |: {'key1': ['json', '$.data', 0], 'key2': ['text', 'xxxx', 0]}
+2025-06-17 16:01:02 | ERROR | excute_cases | 33 |: 用例执行失败：'NoneType' object has no attribute 'json'

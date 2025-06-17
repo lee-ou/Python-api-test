@@ -23,7 +23,7 @@ def create_test_funcs(data):
     """
 
     @pytest.mark.parametrize('info', get_cases_data(data))
-    def funcs(self, info, request):
+    def funcs(self, info):
         excute_cases(info)
 
     return funcs

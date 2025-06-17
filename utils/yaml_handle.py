@@ -23,6 +23,11 @@ def get_cases_data(path):
         return yaml.safe_load(file)
 
 
+def read_config(node, key):
+    with open('config/config.yaml', mode='r', encoding='utf-8') as file:
+        return yaml.safe_load(file)[node][key]
+
+
 def write_extract(data: dict):
     """
     Write YAML file with given data and return it as a dictionary with key as key and value as value
@@ -44,19 +49,33 @@ def clear_extract():
 
 def get_sorted_yaml_files():
     """
-    获取指定目录及其子目录下所有.yaml/.yml文件路径，并排序
-    :return: 排序后的文件路径列表
+    获取datas目录下所有子目录中的yaml文件路径
+    先对子目录排序，再对每个子目录下的文件排序
+    
+    参数:
+        datas_dir: 数据目录路径
+        
+    返回:
+        排序后的yaml文件路径列表
     """
-    yaml_files = []
+    yaml_paths = []
 
-    # 遍历目录树
-    for root, _, files in os.walk('datas'):
+    # 获取所有子目录并排序
+    subdirs = [d for d in os.listdir('./datas')
+               if os.path.isdir(os.path.join('./datas', d))]
+    subdirs.sort()
+
+    # 遍历每个子目录
+    for subdir in subdirs:
+        subdir_path = os.path.join('./datas', subdir)
+
+        # 获取子目录下所有yaml文件并排序
+        files = [f for f in os.listdir(subdir_path)
+                 if f.endswith(('.yaml', '.yml'))]
+        files.sort()
+
+        # 添加完整路径到结果列表
         for file in files:
-            if file.lower().endswith(('.yaml', '.yml')):
-                # 拼接完整路径
-                full_path = os.path.join(root, file)
-                yaml_files.append(full_path)
+            yaml_paths.append(os.path.join(subdir_path, file))
 
-    # 按文件名排序
-    yaml_files.sort()
-    return yaml_files
+    return yaml_paths

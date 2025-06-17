@@ -18,4 +18,8 @@
     files:
       key: value
   extract:
+    key1: [ json,'$.data',0 ]
+    key2: [ text,'xxxx',0 ]
   validate:
+    contain: { 'expected': 'success', 'extract_type': 'json', 'expression': '$.message','index': 0 }
+    equal: { expected: 200, extract_type: status_code, expression: '','index': 0 }
