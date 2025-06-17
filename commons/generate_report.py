@@ -6,10 +6,7 @@ logger = logging.getLogger(__name__)
 
 
 def generate_report():
-    """
-    生成测试报告
-    :return:
-    """
+    """生成测试报告"""
     try:
         report_file = os.path.join('./outputs/reports/', 'API-Report' + time.strftime("%Y%m%d%H%M"))
         os.makedirs(report_file)
