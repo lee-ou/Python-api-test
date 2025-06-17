@@ -1,6 +1,0 @@
-2025-06-17 16:01:02 | [32mINFO[0m | excute_cases | 20 |: 执行用例：xxx==>获取Auth鉴权码
-2025-06-17 16:01:02 | [32mINFO[0m | send_request | 32 |: 请求url参数: None
-2025-06-17 16:01:02 | [32mINFO[0m | send_request | 32 |: 请求method参数: None
-2025-06-17 16:01:02 | [32mINFO[0m | send_request | 32 |: 请求headers参数: None
-2025-06-17 16:01:02 | [32mINFO[0m | send_request | 32 |: 请求json参数: None
-2025-06-17 16:01:02 | [1m[31mERROR[0m | send_request | 39 |: 请求失败: 'NoneType' object has no attribute 'upper'

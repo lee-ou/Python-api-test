@@ -5,12 +5,13 @@ import pytest
 import logging
 
 from commons.cases import excute_cases
-from utils.yaml_handle import get_sorted_yaml_files, get_cases_data
+from utils.yaml_handle import get_sorted_yaml_files, get_cases_data, read_config
 
 logger = logging.getLogger(__name__)
+title = read_config('REPORT', 'title')
 
 
-@allure.epic('XXX接口自动化测试报告')
+@allure.epic(title)
 class TestApiFuncs:
     pass
 
@@ -24,7 +25,9 @@ def create_test_funcs(data):
 
     @pytest.mark.parametrize('info', get_cases_data(data))
     def funcs(self, info):
+        logger.info('===========================开始执行===========================')
         excute_cases(info)
+        logger.info('===========================执行完成===========================\n')
 
     return funcs
 

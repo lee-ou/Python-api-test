@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>接口自动化测试报告</title>
+</head>
+<body style="font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fa; margin: 0; padding: 2rem 1rem; color: #2d3748;">
+<div style="max-width: 800px; margin: 0 auto; background: #ffffff; padding: 2.5rem; border-radius: 16px; box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.1); border-top: 8px solid #4A90E2;">
+    <div style="text-align: center; margin-bottom: 2.5rem;">
+        <h1 style="font-size: 2.2rem; color: #1a365d; margin: 0 0 0.5rem; display: flex; align-items: center; justify-content: center; gap: 0.8rem;">
+            接口自动化测试报告
+        </h1>
+    </div>
+
+    <!-- 使用表格布局替换 Grid 布局 -->
+    <table style="width: 100%; margin-bottom: 2.5rem;">
+        <tr>
+            <td style="background: #f8fafc; padding: 1.5rem; border-radius: 10px; text-align: center;">
+                <div>Total Cases</div>
+                <div style="font-size: 2.2rem; font-weight: 700; margin: 0.5rem 0;">{{ total }}</div>
+            </td>
+            <td style="background: #f8fafc; padding: 1.5rem; border-radius: 10px; text-align: center;">
+                <div>Success Rate</div>
+                <div style="font-size: 2.2rem; font-weight: 700; margin: 0.5rem 0;">{{ success_rate }}</div>
+            </td>
+        </tr>
+    </table>
+
+    <!-- 原表格部分保持不变 -->
+    <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);">
+        <thead style="background: #4A90E2; color: white;">
+        <tr>
+            <th style="padding: 1.1rem; text-align: center; font-weight: 600; letter-spacing: 0.5px;">状态类型</th>
+            <th style="padding: 1.1rem; text-align: center; font-weight: 600; letter-spacing: 0.5px;">数量</th>
+            <th style="padding: 1.1rem; text-align: center; font-weight: 600; letter-spacing: 0.5px;">占比</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr style="background: #f8fafc;">
+            <td style="text-align: center;"><span
+                    style="width: 10px; height: 10px; border-radius: 50%; background: #6DD400;"></span>通过
+            </td>
+            <td style="text-align: center;">{{ passed }}</td>
+            <td style="text-align: center;">{{ passed_percent }}</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;"><span
+                    style="width: 10px; height: 10px; border-radius: 50%; background: #FF5A5A;"></span>失败
+            </td>
+            <td style="text-align: center;">{{ failed }}</td>
+            <td style="text-align: center;">{{ failed_percent }}</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;"><span
+                    style="width: 10px; height: 10px; border-radius: 50%; background: #FF5A5A;"></span>异常
+            </td>
+            <td style="text-align: center;">{{ error }}</td>
+            <td style="text-align: center;">{{ error_percent }}</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;"><span
+                    style="width: 10px; height: 10px; border-radius: 50%; background: #FF5A5A;"></span>跳过
+            </td>
+            <td style="text-align: center;">{{ skipped }}</td>
+            <td style="text-align: center;">{{ skipped_percent }}</td>
+        </tr>
+        </tbody>
+    </table>
+    <div style="margin-top: 2rem; padding-top: 1.5rem; text-align: center; color: #718096; font-size: 0.9rem; border-top: 1px solid #e2e8f0;">
+        这是系统自动发送的邮件，请勿回复。<br>© 2025 Test team
+    </div>
+</div>
+</body>
+</html>

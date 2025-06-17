@@ -12,7 +12,7 @@
 - module: xxx
   title: 文件上传
   request:
-    url:
+    url: ${env()}
     method:
     headers:
     files:

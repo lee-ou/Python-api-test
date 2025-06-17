@@ -1,8 +1,31 @@
-Request:
-  max_retries: False
+# 测试报告
+REPORT:
+  title: '接口自动化测试报告'
 
+# 项目环境
+ENV:
+  test_url: '132456'
+
+# 数据库配置
 MYSQL:
   host:
   port:
   user:
   pwd:
+
+# 钉钉通知配置
+DingTalk_RobotNotice:
+  switch: False
+  mobile: [ '18573810472' ]
+  webhook_token: 'e6bc05264f668e45cb187c0876935538be3c586c72ff37e7b92cc9a76d137f94'
+
+# 邮箱配置
+SMTP:
+  switch: False
+  smtp_server: smtp.qq.com
+  smtp_port: 465
+  sender_email: 2476881327@qq.com
+  sender_password: pkftjpcosegveche
+  recipient_email: lo18573810472@163.com
+  sender: Testers
+  recipient:

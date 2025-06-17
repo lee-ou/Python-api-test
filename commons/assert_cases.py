@@ -4,6 +4,8 @@ import re
 import jsonpath
 from typing import Any, Dict
 
+from utils.copy_data import copy_data
+
 logger = logging.getLogger(__name__)
 
 # 断言类型映射字典
@@ -25,8 +27,7 @@ def assert_cases(resp: Any, validate: Dict[str, Any]) -> bool:
     返回:
         bool: 所有断言是否通过
     """
-    new_resp = copy.deepcopy(resp)
-    new_resp.json = new_resp.json()
+    new_resp = copy_data(resp)
     try:
         for assert_type, assert_value in validate.items():
             logger.info(f'使用{assert_type}断言，断言参数：{assert_value}')

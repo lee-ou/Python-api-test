@@ -23,9 +23,11 @@ def get_cases_data(path):
         return yaml.safe_load(file)
 
 
-def read_config(node, key):
+def read_config(node, key=None):
     with open('config/config.yaml', mode='r', encoding='utf-8') as file:
-        return yaml.safe_load(file)[node][key]
+        if key:
+            return yaml.safe_load(file)[node][key]
+        return yaml.safe_load(file)[node]
 
 
 def write_extract(data: dict):
@@ -36,15 +38,6 @@ def write_extract(data: dict):
     """
     with open('extract.yaml', mode='a+', encoding='utf-8') as file:
         yaml.dump(file, data, default_flow_style=False)
-
-
-def clear_extract():
-    """
-    Clear YAML file
-    :return:
-    """
-    with open('extract.yaml', mode='w', encoding='utf-8') as file:
-        file.truncate()
 
 
 def get_sorted_yaml_files():

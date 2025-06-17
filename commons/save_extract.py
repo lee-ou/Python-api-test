@@ -4,6 +4,7 @@ import logging
 import jsonpath
 from typing import Any
 
+from utils.copy_data import copy_data
 from utils.yaml_handle import write_extract
 
 logger = logging.getLogger(__name__)
@@ -22,8 +23,7 @@ def save_var(resp: Any, extract: dict) -> bool:
     :param extract: 缓存表达式
     :return:
     """
-    new_resp = copy.deepcopy(resp)
-    new_resp.json = new_resp.json()
+    new_resp = copy_data(resp)
     try:
         for var_name, value in extract.items():
             logger.warning(f'正在缓存变量： {var_name} | {value}')

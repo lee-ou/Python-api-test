@@ -3,6 +3,7 @@ import allure
 from commons.all_requests import request_client
 from commons.assert_cases import assert_cases
 from commons.module import verfiy_module
+from commons.replace_template import replace_data
 from commons.save_extract import save_var
 
 logger = logging.getLogger(__name__)
@@ -18,7 +19,7 @@ def excute_cases(info: dict) -> None:
     allure.description(info.get('title'))
 
     logger.info(f"执行用例：{info.get('module')}==>{info.get('title')}")
-    info = verfiy_module(info)
+    info = replace_data(verfiy_module(info))
     try:
         resp = request_client.send_request(**info.get('request'))
         extract = info.get('extract')
