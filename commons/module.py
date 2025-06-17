@@ -7,9 +7,7 @@ logger = logging.getLogger(__name__)
 
 @dataclass
 class Module:
-    """
-    用例格式模版
-    """
+    """用例格式模版"""
     module: dict
     title: dict
     request: dict
