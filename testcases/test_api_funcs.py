@@ -23,10 +23,10 @@ def create_test_funcs(data):
     :return: 测试用例（方法）
     """
 
-    @pytest.mark.parametrize('info', get_cases_data(data))
-    def funcs(self, info):
+    @pytest.mark.parametrize('case_info', get_cases_data(data))
+    def funcs(self, case_info):
         logger.info('===========================开始执行===========================')
-        excute_cases(info)
+        excute_cases(case_info)
         logger.info('===========================执行完成===========================\n')
 
     return funcs

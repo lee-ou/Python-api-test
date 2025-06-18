@@ -13,13 +13,13 @@ def read_extract_file(key):
         return yaml.safe_load(file)[key]
 
 
-def get_cases_data(path):
+def get_cases_data(yaml_path):
     """
     Read YAML file with given path and return it as a dictionary
-    :param path: 文件路径
+    :param yaml_path: 文件路径
     :return: 数据
     """
-    with open(path, mode='r', encoding='utf-8') as file:
+    with open(yaml_path, mode='r', encoding='utf-8') as file:
         return yaml.safe_load(file)
 
 
@@ -42,14 +42,8 @@ def write_extract(data: dict):
 
 def get_sorted_yaml_files():
     """
-    获取datas目录下所有子目录中的yaml文件路径
-    先对子目录排序，再对每个子目录下的文件排序
-    
-    参数:
-        datas_dir: 数据目录路径
-        
-    返回:
-        排序后的yaml文件路径列表
+    获取datas目录下所有子目录中的yaml文件路径，先对子目录排序，再对每个子目录下的文件排序
+    :return: 排序后的yaml文件路径列表
     """
     yaml_paths = []
 

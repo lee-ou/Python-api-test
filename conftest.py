@@ -1,9 +1,7 @@
 import datetime
 import logging
 import time
-
 import pytest
-
 from utils.clear_old_files import DataClearUtils
 from utils.notification_utils import RobotNotice
 from utils.send_email_utils import SendEmail
@@ -32,7 +30,7 @@ def pytest_terminal_summary(terminalreporter):
     skipped = len(terminalreporter.stats.get("skipped", []))
     error = len(terminalreporter.stats.get("error", []))
     total = passed + failed + skipped + error
-    duration = round(time.time() - terminalreporter._sessionstarttime, 2)
+    duration = round(time.time() - terminalreporter._sessionstarttime, 3)
     logger.info(f"执行用例数：{total}，通过：{passed}，失败：{failed}，跳过：{skipped}，错误：{error}，耗时：{duration}秒")
     data = {
         'total': total,

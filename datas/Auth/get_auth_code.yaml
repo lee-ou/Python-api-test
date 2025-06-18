@@ -8,7 +8,6 @@
   extract:
   validate:
 
-
 - module: xxx
   title: 文件上传
   request:

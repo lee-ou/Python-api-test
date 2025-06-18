@@ -9,21 +9,21 @@ from commons.save_extract import save_var
 logger = logging.getLogger(__name__)
 
 
-def excute_cases(info: dict) -> None:
+def excute_cases(case_info: dict) -> None:
     """
     执行测试用例方法
-    :param info: 用例数据
+    :param case_info: 用例数据
     :return:
     """
-    allure.title(info.get('module'))
-    allure.description(info.get('title'))
+    allure.title(case_info.get('module'))
+    allure.description(case_info.get('title'))
 
-    logger.info(f"执行用例：{info.get('module')}==>{info.get('title')}")
-    info = replace_data(verfiy_module(info))
+    logger.info(f"执行用例：{case_info.get('module')}==>{case_info.get('title')}")
+    new_case_info = replace_data(verfiy_module(case_info))
     try:
-        resp = request_client.send_request(**info.get('request'))
-        extract = info.get('extract')
-        validate = info.get('validate')
+        resp = request_client.send_request(**new_case_info.get('request'))
+        extract = new_case_info.get('extract')
+        validate = new_case_info.get('validate')
         if extract:
             logger.info(extract)
             save_var(resp,extract)

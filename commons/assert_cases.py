@@ -1,4 +1,3 @@
-import copy
 import logging
 import re
 import jsonpath
@@ -8,7 +7,7 @@ from utils.copy_data import copy_data
 
 logger = logging.getLogger(__name__)
 
-# 断言类型映射字典
+# 断言类型映射字典，支持扩展添加新的断言类型
 ASSERT_TYPE_DICT = {
     'contain': lambda expected, actual: expected in actual,
     'equal': lambda expected, actual: expected == actual,
@@ -21,11 +20,9 @@ ASSERT_TYPE_DICT = {
 def assert_cases(resp: Any, validate: Dict[str, Any]) -> bool:
     """
     执行多种断言验证
-    参数:
-        resp: 响应对象
-        validate: 断言规则字典，如 {'equal': {'status': 200}}
-    返回:
-        bool: 所有断言是否通过
+    :param resp: 响应对象
+    :param validate: 断言规则字典，如 {'equal': {'status': 200}}
+    :return: bool 所有断言是否通过
     """
     new_resp = copy_data(resp)
     try:
@@ -45,7 +42,7 @@ def assert_cases(resp: Any, validate: Dict[str, Any]) -> bool:
             else:
                 actual = getattr(new_resp, extract_type)
             assert_type_func(expected, actual) if actual else logger.warning(f"实际结果：{actual} 为空")
-        logger.info('断言通过！！！')
+        logger.info('断言通过')
     except Exception as e:
         logger.error(f"断言失败: {e}")
         return False

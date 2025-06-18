@@ -7,3 +7,4 @@ class HotLoads:
     def env(self):
         """获取项目环境"""
         return read_config('ENV', 'test_url')
+

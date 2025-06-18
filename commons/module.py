@@ -26,4 +26,4 @@ def verfiy_module(caseinfo):
         Module(**caseinfo)
         return caseinfo
     except Exception as e:
-        logger.info(f'测试用例不符合模版格式要求，{e}')
+        logger.info(f'用例不符合模版格式要求，{e}')
