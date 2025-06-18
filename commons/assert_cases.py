@@ -36,7 +36,7 @@ def assert_cases(resp: Any, validate: Dict[str, Any]) -> bool:
             if index in (None, ''):
                 index = 0
             if extract_type == 'json':
-                actual = jsonpath.jsonpath(new_resp, expression)[index]
+                actual = jsonpath.jsonpath(new_resp.json, expression)[index]
             elif extract_type == 'text':
                 actual = re.findall(expression, new_resp.text)[index]
             else:
