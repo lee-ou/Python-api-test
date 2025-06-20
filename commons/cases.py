@@ -15,8 +15,8 @@ def excute_cases(case_info: dict) -> None:
     :param case_info: 用例数据
     :return:
     """
-    allure.title(case_info.get('module'))
-    allure.description(case_info.get('title'))
+    allure.dynamic.title(case_info.get('module'))
+    allure.dynamic.description(case_info.get('title'))
 
     logger.info(f"执行用例：{case_info.get('module')}==>{case_info.get('title')}")
     new_case_info = replace_data(verfiy_module(case_info))
@@ -26,7 +26,7 @@ def excute_cases(case_info: dict) -> None:
         validate = new_case_info.get('validate')
         if extract:
             logger.info(extract)
-            save_var(resp,extract)
+            save_var(resp, extract)
 
         if validate:
             assert_cases(resp, validate)

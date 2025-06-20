@@ -1,4 +1,3 @@
-import copy
 import re
 import logging
 import jsonpath
@@ -8,6 +7,7 @@ from utils.copy_data import copy_data
 from utils.yaml_handle import write_extract
 
 logger = logging.getLogger(__name__)
+
 # 保存变量类型映射字典
 SAVE_TYPE_DICT = {
     'json': lambda resp, save_expr, index: jsonpath.jsonpath(resp, save_expr)[index],

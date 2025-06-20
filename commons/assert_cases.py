@@ -2,7 +2,6 @@ import logging
 import re
 import jsonpath
 from typing import Any, Dict
-
 from utils.copy_data import copy_data
 
 logger = logging.getLogger(__name__)

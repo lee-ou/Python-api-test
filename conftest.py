@@ -5,6 +5,7 @@ import pytest
 from utils.clear_old_files import DataClearUtils
 from utils.notification_utils import RobotNotice
 from utils.send_email_utils import SendEmail
+from utils.user_auth import UserAuth
 from utils.yaml_handle import read_config
 
 logger = logging.getLogger(__name__)
@@ -14,7 +15,15 @@ smtp_switch = read_config('SMTP', 'switch')
 
 @pytest.fixture(scope='session', autouse=True)
 def handle_fixture():
+    """
+    执行测试全后置处理
+    """
+    # 前置操作
     DataClearUtils().data_clear()
+    UserAuth().get_auth_code()
+    yield
+    # 后置操作
+    pass
 
 
 def pytest_configure(config):

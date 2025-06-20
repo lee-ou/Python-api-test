@@ -1,9 +1,0 @@
-2025-06-17 18:27:50 | INFO | funcs | 28 |: ===========================开始执行===========================
-2025-06-17 18:27:50 | INFO | excute_cases | 21 |: 执行用例：xxx==>获取Auth鉴权码
-2025-06-17 18:27:50 | INFO | funcs | 28 |: ===========================开始执行===========================
-2025-06-17 18:27:50 | INFO | excute_cases | 21 |: 执行用例：xxx==>文件上传
-2025-06-17 18:27:50 | INFO | replace_data | 16 |: result_list: [('env', '')]
-2025-06-17 18:27:50 | ERROR | _prepare_files | 22 |: 文件打开失败: [Errno 2] No such file or directory: 'value'
-2025-06-17 18:27:50 | ERROR | send_request | 39 |: 请求失败: [Errno 2] No such file or directory: 'value'
-2025-06-17 18:27:50 | INFO | excute_cases | 28 |: {'key1': ['json', '$.data', 0], 'key2': ['text', 'xxxx', 0]}
-2025-06-17 18:27:50 | ERROR | excute_cases | 34 |: 用例执行失败：'NoneType' object has no attribute 'json'

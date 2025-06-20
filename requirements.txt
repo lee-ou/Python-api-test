@@ -1,6 +1,7 @@
-requests
-pytest~=8.4.0
-pyyaml
+pytest
 allure-pytest
+requests
+pyyaml
 jsonpath
 flask
+

@@ -11,7 +11,7 @@ def get_cases_data(yaml_path):
     """
     with open(yaml_path, 'r', encoding='utf-8') as file:
         return yaml.safe_load(file)
-    
+
 
 def read_config(node, key=None):
     with open('config/config.yaml', mode='r', encoding='utf-8') as file:
@@ -38,14 +38,11 @@ def get_sorted_yaml_files():
     return sorted(glob.glob('./datas/**/*.y*ml') + glob.glob('./datas/*.yaml'))
 
 
-
 def find_file_path(target_basename):
     """
     根据无后缀文件名查找完整文件路径
-    参数:
-        target_basename: 目标文件名(不带后缀)
-    返回:
-        匹配文件的完整路径，未找到返回None
+    :param target_basename: 文件名称
+    :return: 文件所在路径
     """
     for root, dirs, files in os.walk('./datas'):
         for filename in files:

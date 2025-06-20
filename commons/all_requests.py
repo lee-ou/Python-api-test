@@ -1,6 +1,5 @@
 import requests
 import logging
-from utils.yaml_handle import read_config
 
 logger = logging.getLogger(__name__)
 
@@ -32,7 +31,9 @@ class AllRequests:
                 logger.info(f'请求{key}参数: {value}')
 
             resp = self.sess.request(**kwargs)
-            logger.info(f'接口响应时间：{resp.elapsed}')
+            # 将响应时间转换为毫秒数，更直观
+            elapsed_ms = resp.elapsed.total_seconds() * 1000
+            logger.info(f'接口响应时间：{elapsed_ms:.2f}ms')
             resp_result = resp.json() if 'json' in resp.headers.get('Content-Type') else resp.text
             return resp_result
         except Exception as e:
