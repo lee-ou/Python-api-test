@@ -1,3 +1,10 @@
+# 基础配置
+BaseConfig:
+  test_email: 'ou.lee@channelwill.com'
+   # 指定运行用例   ALL表示全部运行，CASE_YAML_NAME表示指定用例运行，多个用例用英文逗号分隔
+  run_case_filter: get_auth_code    
+
+
 # 测试报告
 REPORT:
   title: '接口自动化测试报告'
